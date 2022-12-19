@@ -2,5 +2,4 @@ pytest
 pytest-mock
 pytest-cov
 pylint
-portaudio
-pyaudio
+PyAudio==0.2.11
