@@ -2,10 +2,4 @@ pytest
 pytest-mock
 pytest-cov
 pylint
-opencv-python
-docker~=4.4.2
-flask~=1.1.2
-playsound~=1.2.2
-SpeechRecognition~=3.8.1
-PyAudio~=0.2.11
-treetaggerwrapper~=2.3
+pyaudio
