@@ -1,5 +1,5 @@
 from pytest_mock import MockerFixture
-from src.modules.mod_volume import ModuleVolume
+from src.mod_volume import ModuleVolume
 import src.myAssistant as myAssistant
 
 def test_inputCommand(mocker: MockerFixture) -> None:
