@@ -1,7 +1,6 @@
 from typing import List
 import pytest
-from src import mod_volume as mod_volume
-
+import src.mod_volume as mod_volume
 
 def test_clamp_val() -> None:
     assert type(mod_volume.clamp_val(0)) is int

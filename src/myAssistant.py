@@ -1,8 +1,8 @@
 from pyttsx3 import init
 import speech_recognition as sr
 
-from src.master_module import MasterModule
-from src.mod_volume import ModuleVolume
+from .master_module import MasterModule
+from .mod_volume import ModuleVolume
 
 reco = sr.Recognizer()
 micro = sr.Microphone()
