@@ -1,12 +1,10 @@
 from pytest_mock import MockerFixture
-
-import sys 
- 
-# setting path 
-sys.path.append('../../src') 
-# importing 
-import src.myAssistant as myAssistant 
+from src import myAssistant
 from src.modules.mod_volume import ModuleVolume
+import sys
+
+# setting path
+sys.path.append('../../src')
 
 # We cannot test inputCommand(), beacuse the objects used in it are not defined during tests runned from a virtual environment
 # def test_inputCommand(mocker: MockerFixture) -> None:

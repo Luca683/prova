@@ -1,9 +1,9 @@
 from typing import List
 import pytest
-from ..modules.mod_volume import *
+from src.modules.mod_volume import ModuleVolume, clamp_val
 
 def test_clamp_val() -> None:
-    assert type(clamp_val(0)) is int
+    assert isinstance(clamp_val(0), int)
 
     assert clamp_val(0) == 0
     assert clamp_val(100) == 100
