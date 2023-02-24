@@ -1,15 +1,18 @@
 from pyttsx3 import init
 import speech_recognition as sr
 
-from .master_module import MasterModule
-from .mod_volume import ModuleVolume
+from .modules.master_module import MasterModule
+from .modules.mod_volume import ModuleVolume
 
-reco = sr.Recognizer()
-micro = sr.Microphone()
+try:
+    reco = sr.Recognizer()
+    micro = sr.Microphone()
 
-engine = init()
-voices = engine.getProperty("voices")
-engine.setProperty("voice", voices[0].id)
+    engine = init()
+    voices = engine.getProperty("voices")
+    engine.setProperty("voice", voices[0].id)
+except:
+    print("Cannot define audio settings")
 
 
 def speak(response) -> None:
@@ -25,8 +28,8 @@ def inputCommand() -> str:
             audio = reco.listen(source)
 
         question = reco.recognize_google(audio, language="it-IT").lower()
-    except sr.UnknownValueError:
-        question = "_NoQuestion"
+    except:
+        question = "question_ex"
 
     return question
 
