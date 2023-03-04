@@ -1,8 +1,8 @@
 from pyttsx3 import init
 import speech_recognition as sr
 
-from .modules.master_module import MasterModule
-from .modules.mod_volume import ModuleVolume
+from src.modules.master_module import MasterModule
+from src.modules.mod_volume import ModuleVolume
 
 try:
     reco = sr.Recognizer()
@@ -26,7 +26,7 @@ def inputCommand() -> str:
     try:
         with micro as source:
             # r.pause_threshold = 3.0
-            # print("pronto ad ascoltare...")
+            print("pronto ad ascoltare...")
             audio = reco.listen(source)
 
         question = reco.recognize_google(audio, language="it-IT").lower()
