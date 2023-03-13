@@ -6,9 +6,3 @@ pyttsx3
 pycaw
 SpeechRecognition
 pyaudio
-comtypes==1.1.11
-psutil==5.9.0
-black
-flake8
-isort
-coveralls

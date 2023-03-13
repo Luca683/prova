@@ -1,6 +1,6 @@
 from typing import List
 import pytest
-from src.modules.mod_volume import ModuleVolume, clamp_val
+from ..src.mod_volume import ModuleVolume, clamp_val
 
 def test_clamp_val() -> None:
     assert isinstance(clamp_val(0), int)
