@@ -1,6 +1,5 @@
 import subprocess
-#from master_module import MasterModule
-import master_module
+from master_module import MasterModule
 import re
 
 
@@ -15,7 +14,7 @@ def clamp_val(number: int) -> int:
     return number
 
 
-class ModuleVolume(master_module.MasterModule):
+class ModuleVolume(MasterModule):
     def __init__(self):
         self.action_set = False
         self.is_to = False
