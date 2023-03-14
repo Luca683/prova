@@ -1,8 +1,3 @@
-from pyttsx3 import init
-import speech_recognition as sr
-
-#from src import mod_volume
-#from src import master_module
 import os
 import sys
 
@@ -14,6 +9,8 @@ if module_path not in sys.path:
 # Importa i moduli
 import mod_volume
 import master_module
+from pyttsx3 import init
+import speech_recognition as sr
 
 try:
     reco = sr.Recognizer()
