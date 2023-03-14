@@ -1,6 +1,6 @@
 # Importa i moduli
-from mod_volume import *
-from master_module import *
+from mod_volume import ModuleVolume
+from master_module import MasterModule
 from pyttsx3 import init
 import speech_recognition as sr
 
