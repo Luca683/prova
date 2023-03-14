@@ -6,17 +6,24 @@ import speech_recognition as sr
 import mod_volume
 import master_module
 
-def speak(response) -> None:
+try:
+    reco = sr.Recognizer()
+    micro = sr.Microphone()
+
     engine = init()
     voices = engine.getProperty("voices")
     engine.setProperty("voice", voices[41].id)
+except OSError:
+    reco = None
+    micro = None
+    print("Cannot define audio settings")
+
+def speak(response) -> None:
     engine.say(response)
     engine.runAndWait()
 
 
 def inputCommand() -> str:
-    reco = sr.Recognizer()
-    micro = sr.Microphone()
     try:
         with micro as source:
             # r.pause_threshold = 3.0

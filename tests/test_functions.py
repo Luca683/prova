@@ -1,5 +1,11 @@
+import sys
+import os
+
+src_folder = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'src'))
+sys.path.append(src_folder)
+
 from pytest_mock import MockerFixture
-from ..src import myAssistant
+import src.myAssistant
 
 
 
@@ -21,22 +27,22 @@ from ..src import myAssistant
 
 def test_findModule():
     # assert
-    res = myAssistant.findModule("abbassa volume di 150")
+    res = src.myAssistant.findModule("abbassa volume di 150")
     #assert isinstance(res, ModuleVolume)
-    res = myAssistant.findModule("Ciao mondo")
+    res = src.myAssistant.findModule("Ciao mondo")
     assert res is None
 
 
 def test_execution(mocker: MockerFixture) -> None:
     # arrange
     mock_return = "stop"
-    mocker.patch.object(myAssistant, "inputCommand", return_value=mock_return)
+    mocker.patch.object(src.myAssistant, "inputCommand", return_value=mock_return)
 
     # Mock speak() or it will trigger during test
-    mocker.patch.object(myAssistant, "speak", return_value=None)
+    mocker.patch.object(src.myAssistant, "speak", return_value=None)
 
     # act
-    res = myAssistant.execute()
+    res = src.myAssistant.execute()
 
     # assert
     assert isinstance(res, bool)
