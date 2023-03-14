@@ -1,8 +1,13 @@
 # Importa i moduli
-from mod_volume import ModuleVolume
-from master_module import MasterModule
+#from mod_volume import ModuleVolume
+#from master_module import MasterModule
 from pyttsx3 import init
 import speech_recognition as sr
+
+import importlib
+mod_volume = importlib.import_module('mod_volume')
+master_module = importlib.import_module('master_module')
+
 
 try:
     reco = sr.Recognizer()
@@ -38,8 +43,8 @@ def inputCommand() -> str:
     return question
 
 
-def findModule(command: str) -> MasterModule: #MasterModule:
-    module_volume = ModuleVolume() #ModuleVolume()
+def findModule(command: str) -> master_module.MasterModule: #MasterModule:
+    module_volume = mod_volume.ModuleVolume() #ModuleVolume()
 
     if module_volume.check_command(command):
         return module_volume

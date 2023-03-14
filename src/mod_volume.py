@@ -1,6 +1,9 @@
 import subprocess
-from master_module import MasterModule
 import re
+import importlib
+master_module = importlib.import_module('master_module')
+#from master_module import MasterModule
+
 
 
 # Clamp values between 0 and 100
@@ -14,7 +17,7 @@ def clamp_val(number: int) -> int:
     return number
 
 
-class ModuleVolume(MasterModule):
+class ModuleVolume(master_module.MasterModule):
     def __init__(self):
         self.action_set = False
         self.is_to = False
