@@ -1,3 +1,4 @@
+importlib-metadata
 pytest
 pytest-mock
 pytest-cov
