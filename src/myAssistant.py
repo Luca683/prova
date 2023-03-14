@@ -1,6 +1,6 @@
 # Importa i moduli
-import mod_volume
-import master_module
+from mod_volume import *
+from master_module import *
 from pyttsx3 import init
 import speech_recognition as sr
 
@@ -38,8 +38,8 @@ def inputCommand() -> str:
     return question
 
 
-def findModule(command: str) -> master_module.MasterModule: #MasterModule:
-    module_volume = mod_volume.ModuleVolume() #ModuleVolume()
+def findModule(command: str) -> MasterModule: #MasterModule:
+    module_volume = ModuleVolume() #ModuleVolume()
 
     if module_volume.check_command(command):
         return module_volume
