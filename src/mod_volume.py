@@ -47,7 +47,7 @@ class ModuleVolume(MasterModule):
     def execute(self, command: str) -> str:
         try:
             val = self.find_new_volume(command)
-            subprocess.run(["amixer", "-D", "pulse", "sset", "Master", val])
+            subprocess.run(["amixer", "-D", "pulse", "sset", "Master", val], check=True)
 
         except OSError:
             return "There was a problem with the SO"
