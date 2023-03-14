@@ -1,11 +1,3 @@
-import os
-import sys
-
-# Aggiunge la cartella che contiene i moduli al percorso di ricerca dei moduli
-module_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
-if module_path not in sys.path:
-    sys.path.append(module_path)
-
 # Importa i moduli
 import mod_volume
 import master_module
